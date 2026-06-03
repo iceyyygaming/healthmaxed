@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Configure GoDaddy DNS for HealthMaxed.com -> GitHub Pages.
+"""Configure GoDaddy DNS for HealthMaxxed.com -> GitHub Pages.
 
 Requires environment variables:
   GODADDY_API_KEY
   GODADDY_API_SECRET
 
-This replaces only the apex A records and www CNAME record for healthmaxed.com.
+This replaces only the apex A records and www CNAME record for healthmaxxed.com.
 It does not touch MX/email records or unrelated TXT records.
 """
 import json
@@ -14,7 +14,7 @@ import sys
 import urllib.request
 import urllib.error
 
-DOMAIN = "healthmaxed.com"
+DOMAIN = "healthmaxxed.com"
 API = "https://api.godaddy.com/v1"
 A_RECORDS = [
     {"data": "185.199.108.153", "ttl": 600},

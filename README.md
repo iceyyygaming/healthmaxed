@@ -1,13 +1,13 @@
 # HealthMaxed
 
-HealthMaxed.com — clean, inclusive, hype-checked wellness product intelligence.
+HealthMaxxed.com — clean, inclusive, hype-checked wellness product intelligence.
 
 ## Stack
 
 - Astro
 - Tailwind CSS
 - GitHub Pages deployment
-- Custom domain: `healthmaxed.com`
+- Custom domain: `healthmaxxed.com`
 
 ## Local development
 

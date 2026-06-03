@@ -1,4 +1,4 @@
-# HealthMaxed.com DNS setup
+# HealthMaxxed.com DNS setup
 
 HealthMaxed is deployed on GitHub Pages from:
 
@@ -7,7 +7,7 @@ https://github.com/iceyyygaming/healthmaxed
 GitHub Pages is configured with custom domain:
 
 ```text
-healthmaxed.com
+healthmaxxed.com
 ```
 
 ## GoDaddy DNS records needed
