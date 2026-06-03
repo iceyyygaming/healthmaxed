@@ -10,9 +10,22 @@ GitHub Pages is configured with custom domain:
 healthmaxxed.com
 ```
 
-## GoDaddy DNS records needed
+## Preferred: GoDaddy DNS records for Vercel
 
-Set these records in GoDaddy DNS:
+If using Vercel as the production host, set these records in GoDaddy DNS:
+
+```text
+A      @      76.76.21.21
+CNAME  www    cname.vercel-dns.com
+```
+
+Delete/replace any existing GoDaddy parked-site A/CNAME records for `@` and `www` that conflict with these.
+
+Do not delete MX records unless intentionally changing email.
+
+## Fallback: GoDaddy DNS records for GitHub Pages
+
+If staying on GitHub Pages instead of Vercel, use:
 
 ```text
 A      @      185.199.108.153
@@ -21,10 +34,6 @@ A      @      185.199.110.153
 A      @      185.199.111.153
 CNAME  www    iceyyygaming.github.io
 ```
-
-Delete/replace any existing GoDaddy parked-site A/CNAME records for `@` and `www` that conflict with these.
-
-Do not delete MX records unless intentionally changing email.
 
 ## API setup option
 

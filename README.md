@@ -6,7 +6,8 @@ HealthMaxxed.com — clean, inclusive, hype-checked wellness product intelligenc
 
 - Astro
 - Tailwind CSS
-- GitHub Pages deployment
+- Vercel deployment preferred
+- GitHub Pages deployment available as fallback
 - Custom domain: `healthmaxxed.com`
 
 ## Local development
@@ -18,14 +19,15 @@ npm run dev
 
 ## Deployment
 
-Pushing to `main` triggers GitHub Pages via `.github/workflows/deploy.yml`.
+Preferred production path is GitHub → Vercel → GoDaddy DNS.
 
-DNS for GitHub Pages apex domain:
+Vercel DNS:
 
 ```text
-A     @    185.199.108.153
-A     @    185.199.109.153
-A     @    185.199.110.153
-A     @    185.199.111.153
-CNAME www  iceyyygaming.github.io
+A     @    76.76.21.21
+CNAME www  cname.vercel-dns.com
 ```
+
+See `VERCEL_SETUP.md` and `DNS_SETUP.md`.
+
+GitHub Pages is currently configured as a fallback via `.github/workflows/deploy.yml`.
