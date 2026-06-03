@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { checklistCriteria } from '../../data/healthmaxxed';
+---
+<BaseLayout title="The HealthMaxxed Buyer Checklist — 100-point wellness product scorecard" description="Use the HealthMaxxed 100-point buyer checklist to evaluate supplements and wellness products before buying.">
+  <section class="hm-shell py-16 md:py-24">
+    <p class="hm-label">Launch asset</p>
+    <h1 class="mt-4 max-w-4xl text-5xl font-black tracking-tight md:text-7xl">The HealthMaxxed Buyer Checklist.</h1>
+    <p class="mt-6 max-w-3xl text-lg leading-8 text-[#2b302c]">A product does not earn trust because the label is pretty, the founder is loud, or the claims sound scientific. Use this 100-point checklist to slow down the purchase and compare products with less hype.</p>
+    <div class="mt-10 grid gap-4 md:grid-cols-2">
+      {checklistCriteria.map((item) => (
+        <article class="hm-card rounded-[1.5rem] p-6">
+          <div class="flex items-start justify-between gap-4">
+            <h2 class="text-2xl font-black">{item.title}</h2>
+            <span class="rounded-2xl bg-[#17201b] px-3 py-1 font-black text-[#f7f3ea]">{item.score}</span>
+          </div>
+          <p class="mt-4 leading-7 text-[#2b302c]">{item.detail}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="bg-[#17201b] py-16 text-[#f7f3ea]">
+    <div class="hm-shell grid gap-8 md:grid-cols-[.8fr_1.2fr]">
+      <div>
+        <p class="hm-label text-[#a9b99f]">How to use it</p>
+        <h2 class="mt-3 text-4xl font-black tracking-tight">Score before you buy.</h2>
+      </div>
+      <div class="grid gap-4">
+        {['Start at 100 and subtract when a product hides information.', 'Do the price math per effective serving, not per tub or per scoop.', 'Flag any disease-treatment, hormone-hacking, detox, or miracle language.', 'Prefer boring transparency over polished hype.'].map((step, index) => (
+          <div class="rounded-[1.25rem] border border-white/10 bg-white/7 p-5"><strong>{index + 1}.</strong> {step}</div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="hm-shell py-16">
+    <div class="hm-card rounded-[2rem] p-8 md:p-12">
+      <p class="hm-label">Printable version</p>
+      <h2 class="mt-3 text-4xl font-black tracking-tight">Simple scoring bands</h2>
+      <div class="mt-8 grid gap-4 md:grid-cols-3">
+        <div class="rounded-2xl bg-white/60 p-5"><strong>85–100:</strong> Strong buy candidate if it fits your routine.</div>
+        <div class="rounded-2xl bg-white/60 p-5"><strong>70–84:</strong> Maybe; compare alternatives before buying.</div>
+        <div class="rounded-2xl bg-white/60 p-5"><strong>Under 70:</strong> Skip or wait for better evidence/transparency.</div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
