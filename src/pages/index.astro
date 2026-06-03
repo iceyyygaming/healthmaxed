@@ -1,17 +1,108 @@
 ---
-
+import BaseLayout from '../layouts/BaseLayout.astro';
+const guides = [
+  ['The HealthMaxed Buyer Checklist', 'What to buy, skip, and understand before trusting any wellness product.', 'Launch asset'],
+  ['Best creatine supplements for beginners', 'Transparent labels, third-party testing, price per serving, and what claims to ignore.', 'Coming soon'],
+  ['Best magnesium for sleep support', 'A hype-checked guide to forms, dosing boundaries, and quality signals.', 'Coming soon'],
+  ['Best electrolyte powders', 'Sodium, sugar, sweeteners, use cases, and value without the wellness theater.', 'Coming soon'],
+];
+const products = [
+  ['Creatine monohydrate', 'A', 'High evidence', 'Low claim risk'],
+  ['Collagen peptides', 'B', 'Moderate evidence', 'Medium claim risk'],
+  ['Magnesium glycinate', 'B+', 'Moderate evidence', 'Medium claim risk'],
+];
 ---
+<BaseLayout>
+  <section class="hm-shell pt-8">
+    <div class="rounded-full border border-[#17201b]/10 bg-white/50 px-4 py-2 text-sm text-[#2b302c] shadow-sm">
+      <span class="font-bold text-[#66785f]">New:</span> Building the HealthMaxed Buyer Checklist — wellness products with less hype and more transparency.
+    </div>
+  </section>
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+  <section class="hm-shell grid items-center gap-10 py-16 md:grid-cols-[1.05fr_.95fr] md:py-24">
+    <div>
+      <p class="hm-label">Clean wellness intelligence</p>
+      <h1 class="mt-5 max-w-4xl text-5xl font-black tracking-[-0.055em] leading-[.95] text-[#17201b] md:text-7xl">Wellness products, hype-checked.</h1>
+      <p class="mt-6 max-w-2xl text-lg leading-8 text-[#2b302c] md:text-xl">HealthMaxed helps you choose supplements, recovery tools, sleep upgrades, and daily wellness products with less hype and more transparency.</p>
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+        <a href="#guides" class="hm-dark-cta rounded-full px-6 py-3 text-center font-bold no-underline shadow-xl shadow-black/10">Explore buyer guides</a>
+        <a href="/editorial-standards" class="rounded-full border border-[#17201b]/20 bg-white/50 px-6 py-3 text-center font-bold no-underline">Read our standards</a>
+      </div>
+    </div>
+    <div class="hm-card relative overflow-hidden rounded-[2rem] p-6">
+      <div class="absolute right-[-60px] top-[-70px] h-44 w-44 rounded-full bg-[#a9b99f]/60 blur-2xl"></div>
+      <div class="absolute bottom-[-80px] left-[-50px] h-48 w-48 rounded-full bg-[#d8b45f]/35 blur-2xl"></div>
+      <div class="relative rounded-[1.5rem] bg-[#f7f3ea] p-5 shadow-inner">
+        <div class="hm-label">Sample scorecard</div>
+        <div class="mt-4 flex items-start justify-between gap-4">
+          <div>
+            <h2 class="text-2xl font-black tracking-tight">Creatine Monohydrate</h2>
+            <p class="mt-2 text-sm leading-6 text-[#2b302c]">Best first supplement candidate for strength, performance, and simple evidence-aware routines.</p>
+          </div>
+          <div class="grid h-20 w-20 place-items-center rounded-3xl bg-[#17201b] text-3xl font-black text-[#f7f3ea]">A</div>
+        </div>
+        <div class="mt-6 grid gap-3">
+          {['High evidence level', 'Low claim risk', 'Transparent label preferred', 'Price-per-serving comparison'].map((item) => (
+            <div class="flex items-center justify-between rounded-2xl border border-[#17201b]/10 bg-white/60 px-4 py-3">
+              <span class="font-semibold">{item}</span><span class="text-[#66785f]">●</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hm-shell grid gap-4 md:grid-cols-4">
+    {['Transparent labels', 'Third-party testing', 'Claim-risk score', 'Price per serving'].map((badge) => (
+      <div class="rounded-3xl border border-[#17201b]/10 bg-white/45 p-5 font-bold shadow-sm">{badge}</div>
+    ))}
+  </section>
+
+  <section id="guides" class="hm-shell py-20">
+    <div class="flex flex-col justify-between gap-4 md:flex-row md:items-end">
+      <div>
+        <p class="hm-label">Launch queue</p>
+        <h2 class="mt-3 text-4xl font-black tracking-tight md:text-5xl">What to buy, what to skip, what to understand first.</h2>
+      </div>
+      <p class="max-w-md text-[#2b302c]">Starting with safer, useful categories: creatine, collagen, magnesium, electrolytes, sleep, and recovery tools — not direct peptide sourcing.</p>
+    </div>
+    <div class="mt-10 grid gap-5 md:grid-cols-2">
+      {guides.map(([title, desc, tag]) => (
+        <article class="hm-card rounded-[1.5rem] p-6">
+          <div class="hm-label">{tag}</div>
+          <h3 class="mt-4 text-2xl font-black tracking-tight">{title}</h3>
+          <p class="mt-3 leading-7 text-[#2b302c]">{desc}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section id="standards" class="bg-[#17201b] py-20 text-[#f7f3ea]">
+    <div class="hm-shell grid gap-10 md:grid-cols-[.8fr_1.2fr]">
+      <div>
+        <p class="hm-label text-[#a9b99f]">Review standards</p>
+        <h2 class="mt-3 text-4xl font-black tracking-tight">Not miracle protocols. Product intelligence.</h2>
+      </div>
+      <div class="grid gap-4 md:grid-cols-2">
+        {products.map(([name, grade, evidence, risk]) => (
+          <div class="rounded-[1.4rem] border border-white/10 bg-white/7 p-5">
+            <div class="flex items-center justify-between"><h3 class="font-black">{name}</h3><span class="rounded-2xl bg-[#d8b45f] px-3 py-1 font-black text-[#17201b]">{grade}</span></div>
+            <p class="mt-4 text-sm text-[#dfe7dd]">{evidence} · {risk}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="newsletter" class="hm-shell py-20">
+    <div class="hm-card rounded-[2rem] p-8 md:p-12">
+      <p class="hm-label">The clean routine list</p>
+      <h2 class="mt-3 max-w-3xl text-4xl font-black tracking-tight md:text-5xl">One practical product guide, one claim check, and one routine upgrade each week.</h2>
+      <form class="mt-8 grid max-w-2xl gap-3 sm:grid-cols-[1fr_auto]" name="newsletter" method="post" data-netlify="true">
+        <input type="email" name="email" required placeholder="you@example.com" class="rounded-full border border-[#17201b]/15 bg-white px-5 py-4 outline-none focus:border-[#66785f]" />
+        <button class="rounded-full bg-[#66785f] px-7 py-4 font-black text-white">Join the list</button>
+      </form>
+      <p class="mt-4 text-sm text-[#2b302c]/75">Placeholder signup for launch. Email provider integration comes next.</p>
+    </div>
+  </section>
+</BaseLayout>
