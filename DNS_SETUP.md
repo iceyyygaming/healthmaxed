@@ -1,13 +1,15 @@
 # HealthMaxxed.com DNS setup
 
-HealthMaxxed is deployed on GitHub Pages from:
+HealthMaxxed is deployed on Vercel from the GitHub repo:
 
 https://github.com/iceyyygaming/healthmaxed
 
-GitHub Pages is configured with custom domain:
+Vercel project/domain:
 
 ```text
-healthmaxxed.com
+Project: iceyyys-projects/healthmaxxed
+Primary domain: healthmaxxed.com
+Preview alias: healthmaxxed.vercel.app
 ```
 
 ## Preferred: GoDaddy DNS records for Vercel
@@ -23,7 +25,7 @@ Delete/replace any existing GoDaddy parked-site A/CNAME records for `@` and `www
 
 Do not delete MX records unless intentionally changing email.
 
-## Fallback: GoDaddy DNS records for GitHub Pages
+## Fallback only: GoDaddy DNS records for GitHub Pages
 
 If staying on GitHub Pages instead of Vercel, use:
 
@@ -55,4 +57,4 @@ GODADDY_API_SECRET=your_secret_here
 python scripts/godaddy-dns-healthmaxed.py
 ```
 
-After DNS propagates, enable HTTPS enforcement in GitHub Pages if it is not automatically enabled.
+After DNS propagates, Vercel should automatically issue/refresh HTTPS certificates for `healthmaxxed.com` and `www.healthmaxxed.com`.

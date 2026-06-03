@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Configure GoDaddy DNS for HealthMaxxed.com -> GitHub Pages.
+"""Configure GoDaddy DNS for HealthMaxxed.com -> Vercel.
 
 Requires environment variables:
   GODADDY_API_KEY
@@ -16,13 +16,8 @@ import urllib.error
 
 DOMAIN = "healthmaxxed.com"
 API = "https://api.godaddy.com/v1"
-A_RECORDS = [
-    {"data": "185.199.108.153", "ttl": 600},
-    {"data": "185.199.109.153", "ttl": 600},
-    {"data": "185.199.110.153", "ttl": 600},
-    {"data": "185.199.111.153", "ttl": 600},
-]
-WWW_CNAME = [{"data": "iceyyygaming.github.io", "ttl": 600}]
+A_RECORDS = [{"data": "76.76.21.21", "ttl": 600}]
+WWW_CNAME = [{"data": "cname.vercel-dns.com", "ttl": 600}]
 
 key = os.getenv("GODADDY_API_KEY")
 secret = os.getenv("GODADDY_API_SECRET")
@@ -50,14 +45,14 @@ print(f"Checking domain {DOMAIN}...")
 status, details = request("GET", f"/domains/{DOMAIN}")
 print(f"Domain status: {details.get('status')} | expires: {details.get('expires')}")
 
-print("Setting apex A records for GitHub Pages...")
+print("Setting apex A record for Vercel...")
 request("PUT", f"/domains/{DOMAIN}/records/A/@", A_RECORDS)
 
-print("Setting www CNAME for GitHub Pages...")
+print("Setting www CNAME for Vercel...")
 request("PUT", f"/domains/{DOMAIN}/records/CNAME/www", WWW_CNAME)
 
 print("Verifying records...")
 _, a = request("GET", f"/domains/{DOMAIN}/records/A/@")
 _, cname = request("GET", f"/domains/{DOMAIN}/records/CNAME/www")
 print(json.dumps({"A @": a, "CNAME www": cname}, indent=2))
-print("Done. DNS can take a few minutes to a few hours to propagate; GitHub may take time to issue HTTPS cert.")
+print("Done. DNS can take a few minutes to a few hours to propagate; Vercel may take time to issue/refresh HTTPS certs.")
