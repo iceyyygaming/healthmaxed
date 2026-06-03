@@ -1,6 +1,6 @@
 # HealthMaxxed.com DNS setup
 
-HealthMaxed is deployed on GitHub Pages from:
+HealthMaxxed is deployed on GitHub Pages from:
 
 https://github.com/iceyyygaming/healthmaxed
 

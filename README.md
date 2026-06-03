@@ -1,4 +1,4 @@
-# HealthMaxed
+# HealthMaxxed
 
 HealthMaxxed.com — clean, inclusive, hype-checked wellness product intelligence.
 
